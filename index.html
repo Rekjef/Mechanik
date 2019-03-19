@@ -1,0 +1,88 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+	
+		<title>NEED RP | Mechanik by Rekjef</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="main.css" />
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+		
+	</head>
+	
+	<body class="bodyclass">
+	
+		<div id="logo">
+			<span id="need">NEED</span><span id="rp">RP</span>
+			<span style="color: white;">Mechanik</span>
+		</div>
+		
+		<div id="container">
+			
+			<div id="workplace">
+			
+				<form id="myForm">
+				
+					<div id="input-area">
+					
+						<div class="input-field">
+							<span class="input-text">NICK OOC: </span> 
+							<textarea type="text" id="Text1" cols="20" rows="1" class="input short"></textarea>
+						</div>
+						
+						<div class="input-field">
+							<span class="input-text">Co zostało zmienione?: </span> 
+							<textarea id="Text2" cols="40" rows="2" class="input"></textarea>
+						</div>
+						
+						<div class="input-field">
+							<span class="input-text">Za ile?: </span>
+							<textarea id="Text3" cols="20" rows="1" class="input short"></textarea>
+						</div>
+						
+						
+						<button type="button" class="butt" onclick="generate()">Generuj</button>
+						
+						<button type="reset" class="butt2">Reset</button>
+						
+						<div class="input-field">
+							<span class="input-text">Gotowy tekst:</span>
+							<textarea id="text" cols="40" rows="3" class="input" readonly></textarea>
+						</div>
+						
+						<button type="button" class="butt3" onclick="copy()">Kopiuj</button>
+						
+					</div>
+					
+				</form>
+				
+			</div>
+			
+		</div>
+		
+		<footer id="footer">
+			By @Rekjef | 2019
+		</footer>
+		
+		<script type="text/javascript">
+			function generate(){
+				document.getElementById("text").textContent="Komu?: " + document.getElementById("Text1").value + "\n" + "Za co?: " + document.getElementById("Text2").value + "\n" + "Za ile?: " + document.getElementById("Text3").value + " $";
+			}
+			
+			function copy(){
+				var copyText = document.getElementById("text");
+				copyText.select();
+				document.execCommand("copy");
+			}
+			
+			$(document).ready(function() {
+				$('input,textarea').bind('cut paste', function (e) {
+					e.preventDefault();
+				});
+			});
+		</script>
+		
+		
+	</body>
+	
+</html>
