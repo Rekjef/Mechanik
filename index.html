@@ -65,16 +65,31 @@
 		</footer>
 		
 		<script type="text/javascript">
+			function checkTime(i) {
+			if (i < 10) {
+					i = "0" + i;
+				}
+				return i;
+			}
+			
 			function generate(){
-				var currentdate = new Date(); 
-				var time = ":clock4: Kiedy?: " + currentdate.getDate() + "/"
-                + (currentdate.getMonth()+1)  + "/" 
-                + currentdate.getFullYear() + " | "  
-                + currentdate.getHours() + ":"  
-                + currentdate.getMinutes() + ":" 
-                + currentdate.getSeconds();
+				var today = new Date();
+				var h = today.getHours();
+				var m = today.getMinutes();
+				var s = today.getSeconds();
+				var day = today.getDate();
+				var month = today.getMonth()+1;
+				
+				// add a zero in front of numbers<10
+				m = checkTime(m);
+				s = checkTime(s);
+				day = checkTime(day);
+				month = checkTime(month);
+				
 				document.getElementById("text").textContent=":spy::skin-tone-3: Komu?: " + document.getElementById("Text1").value + "\n" + ":tools: Za co?: " + 
-				document.getElementById("Text2").value + "\n" + ":moneybag: Za ile?: " + document.getElementById("Text3").value + " $" + "\n" + time;
+				document.getElementById("Text2").value + "\n" + ":moneybag: Za ile?: " + document.getElementById("Text3").value + " $" + "\n" + ":clock4: Kiedy?: " + day + "/"
+                + month  + "/" + today.getFullYear() + " | "   + h + ":" + m + ":" + s;
+				
 			}
 			
 			function copy(){
