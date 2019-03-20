@@ -66,7 +66,15 @@
 		
 		<script type="text/javascript">
 			function generate(){
-				document.getElementById("text").textContent="Komu?: " + document.getElementById("Text1").value + "\n" + "Za co?: " + document.getElementById("Text2").value + "\n" + "Za ile?: " + document.getElementById("Text3").value + " $";
+				var currentdate = new Date(); 
+				var time = ":clock4: Kiedy?: " + currentdate.getDate() + "/"
+                + (currentdate.getMonth()+1)  + "/" 
+                + currentdate.getFullYear() + " | "  
+                + currentdate.getHours() + ":"  
+                + currentdate.getMinutes() + ":" 
+                + currentdate.getSeconds();
+				document.getElementById("text").textContent=":spy::skin-tone-3: Komu?: " + document.getElementById("Text1").value + "\n" + ":tools: Za co?: " + 
+				document.getElementById("Text2").value + "\n" + ":moneybag: Za ile?: " + document.getElementById("Text3").value + " $" + "\n" + time;
 			}
 			
 			function copy(){
